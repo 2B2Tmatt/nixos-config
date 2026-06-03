@@ -7,7 +7,6 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
-      # This name MUST match your networking.hostName ("nixos")
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [

@@ -112,7 +112,7 @@
 
     # Desktop Application Environment Ecosystem
     kitty waybar rofi swaynotificationcenter nwg-look hyprpaper
-    dbeaver-bin
+    dbeaver-bin stow
   ];
 
   system.stateVersion = "26.05";
