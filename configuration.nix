@@ -61,6 +61,24 @@
     pulse.enable = true;
   };
 
+  # --- Bluetooth Stack Setup ---
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;   # Shows bluetooth peripheral battery levels in Waybar
+        FastConnectable = true;
+      };
+      Policy = {
+        AutoEnable = true;     # Auto-power on adapters
+      };
+    };
+  };
+
+  # Enable the Blueman background service daemon
+  services.blueman.enable = true;
+
   # Define user account
   users.users."matt" = {
     isNormalUser = true;
@@ -96,8 +114,10 @@
     # Baseline Utilities
     wget unzip zip curl git fastfetch vim
     fzf zoxide ripgrep fd tree eza btop jq yq-go
-    wl-clipboard xclip
-
+    wl-clipboard xclip grim slurp grimblast
+    brightnessctl
+    procps
+    imagemagick
     # Core Editors / IDEs
     zed-editor vscode jetbrains.idea-oss
 
@@ -112,7 +132,9 @@
 
     # Desktop Application Environment Ecosystem
     kitty waybar rofi swaynotificationcenter nwg-look hyprpaper
-    dbeaver-bin stow
+    dbeaver-bin stow eza awww libnotify networkmanagerapplet
+    pulseaudio blueman
+    hyprlock wlogout
   ];
 
   system.stateVersion = "26.05";
