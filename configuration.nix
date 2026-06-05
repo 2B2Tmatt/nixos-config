@@ -102,6 +102,14 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
+  
+  environment.sessionVariables = {
+    HYPRCURSOR_THEME = "catppuccin-mocha-dark-cursors";
+    HYPRCURSOR_SIZE = "24"; 
+
+    XCURSOR_THEME = "catppuccin-mocha-dark-cursors";
+    XCURSOR_SIZE = "24";
+  };
 
   # Pure Modern Flake CLI Aliases
   environment.shellAliases = {
@@ -135,6 +143,7 @@
     dbeaver-bin stow eza awww libnotify networkmanagerapplet
     pulseaudio blueman
     hyprlock wlogout
+    catppuccin-cursors.mochaDark
   ];
 
   system.stateVersion = "26.05";
